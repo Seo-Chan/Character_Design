@@ -1,0 +1,191 @@
+/* reset */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* setting */
+:root {
+    --pattern: #e0cfaf;
+    --beak: #ffd87d;
+    --face: #fff6ed;
+}
+
+/* animation */
+@keyframes ani-beak {
+    0% {
+        transform-origin: 0 0;
+    }
+    100% {
+        transform: rotate(8deg);
+        transform-origin: 0 40%;
+    }
+}
+
+@keyframes ani-feather-left {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(-5deg) translate(-2px);
+    }
+}
+
+@keyframes ani-feather-right {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(-5deg) translate(-2px);
+    }
+}
+
+/* design */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+.sparrow {
+    position: relative;
+    top: 100px;
+    margin: 50px auto;
+    width: 400px;
+    height: 400px;
+}
+
+.sparrow .feather.left {
+    background-color: var(--pattern);
+    position: absolute;
+    top: 35px;
+    left: 150px;
+    width: 40px;
+    height: 50px;
+    border-radius: 40% 70% 0% 90% / 0% 80% 10% 90% ;
+    border: 5px solid black;
+    animation: ani-feather-left 1s infinite alternate;
+}
+
+.sparrow .feather.right {
+    background-color: var(--pattern);
+    position: absolute;
+    top: 20px;
+    right: 163px;
+    width: 80px;
+    height: 50px;
+    border-radius: 10% 90% 0% 100% / 0% 89% 11% 100% ;
+    border: 5px solid black;
+    animation: ani-feather-right 1s infinite alternate;
+}
+
+.sparrow .blind2 {
+    background-color: var(--pattern);
+    position: absolute;
+    top: 49px;
+    left: 160px;
+    width: 40px;
+    height: 7px;
+    border-radius: 100% 0% 80%20%
+}
+
+.sparrow .face-top {
+    background-color: var(--face);
+    position: absolute;
+    top: 55px;
+    left: 45px;
+    width: 300px;
+    height: 200px;
+    border-radius: 50% 50% 40% 40%;
+    border: 5px solid black;
+}
+
+.sparrow .face {
+    background-color: var(--face);
+    position: absolute;
+    top: 140px;
+    width: 400px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid black;
+}
+
+.sparrow .blind {
+    background-color: var(--face);
+    position: absolute;
+    top: 135px;
+    left: 50px;
+    width: 290px;
+    height: 70px;
+    border-radius: 40%;
+    z-index: 1;
+}
+
+.face .eye {
+    background-color: black;
+    position: absolute;
+    top: 40px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.face .eye.left {
+    left: 120px;
+    z-index: 2;
+}
+
+.face .eye.right {
+    right: 120px;
+    z-index: 2;
+}
+
+.eye .lens {
+    background-color: white;
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 5px;
+    height: 5px;
+    border-radius: 30%;
+}
+
+
+.face .beak-top {
+    position: absolute;
+    top: 85px;
+    left: 180px;
+    border-bottom: 20px solid var(--beak);
+    border-right: 35px solid transparent;
+    border-left: 20px solid transparent;
+    border-radius: 20%;
+}
+
+.face .beak {
+    position: absolute;
+    top: 105px;
+    left: 180px;
+    border-top: 10px solid var(--beak);
+    border-right: 25px solid transparent;
+    border-left: 20px solid transparent;
+    border-radius: 20%;
+    animation: ani-beak 0.5s infinite alternate;
+}
+
+.face .pattern {
+    position: absolute;
+    background-color: var(--pattern);
+    top: 60px;
+    width: 80px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.face .pattern.left {
+    left: 0;
+}
+
+.face .pattern.right {
+    right: 0;
+}
